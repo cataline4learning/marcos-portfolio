@@ -1,7 +1,5 @@
 # marcos-portfolio
 
-> Demo: https://marcos-portfolio.herokuapp.com
-
 ## Project setup
 ```
 npm install
