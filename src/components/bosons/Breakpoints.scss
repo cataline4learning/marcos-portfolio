@@ -1,0 +1,19 @@
+$breakpoints: (
+  small: '(max-width:  600px)',
+  medium: '(min-width: 600px) and (max-width: 992px)',
+  large: '(min-width: 992px) and (max-width: 1200px)',
+  infinity: '(min-width: 1200px)'
+) !default;
+
+@mixin screen($arr...) {
+  @each $val in $arr {
+    @if map-has-key($breakpoints, $val) {
+      @media #{inspect(map-get($breakpoints, $val))} {
+        @content;
+      }
+    } @else {
+      @warn "No value could be retrieved from `#{$val}`. "
+            + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+  }
+}

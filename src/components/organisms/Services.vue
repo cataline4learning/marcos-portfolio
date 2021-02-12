@@ -30,5 +30,8 @@ export default defineComponent({
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 5rem;
+  @include screen('small', 'medium') {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
